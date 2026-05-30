@@ -1,0 +1,100 @@
+---
+title: "Websthetic | Web Design & Development – Toronto, CA"
+description: "Custom web design and development from Toronto. Websthetic builds digital experiences that elevate your brand."
+permalink: "/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Critical styles are loaded first -->
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    {% if client.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    <!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-websthetic">
+    <div class="cs-container">
+        <h1 class="cs-title">
+    <span class="cs-line">Want to</span>
+    <span class="cs-line">work with us?</span>
+</h1>
+    </div>
+    <div class="cs-scroll-indicator">
+        <svg class="cs-scroll-circle" viewBox="0 0 56 56" aria-hidden="true">
+            <defs><path id="circ" d="M28,28 m-20,0 a20,20 0 1,1 40,0 a20,20 0 1,1 -40,0"/></defs>
+            <text font-size="6.5" fill="#0f1923" font-family="sans-serif" letter-spacing="2.5">
+                <textPath href="#circ">SCROLL · SCROLL · SCROLL ·</textPath>
+            </text>
+        </svg>
+        <span class="cs-scroll-arrow" aria-hidden="true">↓</span>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
+
+<section id="contact-websthetic">
+    <div class="cs-container">
+        <div class="cs-left cs-animate">
+            <h2 class="cs-say-hi">Say hi!</h2>
+            <p class="cs-enquiry-label">General enquiries</p>
+            <a class="cs-email" href="mailto:hello@websthetic.com">hello@websthetic.com</a>
+        </div>
+        <div class="cs-right cs-animate cs-animate-delay">
+            <h3 class="cs-title">Get in touch</h3>
+            <form class="cs-form" name="contact" method="post" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Honeypot field — hidden from humans, catches bots -->
+                <p class="cs-hidden" style="display:none;">
+                    <label>Don't fill this out: <input name="bot-field"></label>
+                </p>
+                <div class="cs-field">
+                    <input class="cs-input" type="text" name="name" placeholder="Name" required>
+                </div>
+                <div class="cs-field">
+                    <input class="cs-input" type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="cs-field cs-field-textarea">
+                    <textarea class="cs-input cs-textarea" name="message" placeholder="How can we help you?" required></textarea>
+                </div>
+                <div class="cs-field-button">
+                    <button class="cs-button" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Contact section animate on scroll
+    const animatedEls = document.querySelectorAll('.cs-animate');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('cs-in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    animatedEls.forEach(el => observer.observe(el));
+</script>
+{% endblock %}

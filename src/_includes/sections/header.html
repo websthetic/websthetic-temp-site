@@ -1,0 +1,22 @@
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-container">
+        <a href="/" class="cs-logo" aria-label="Websthetic Home">
+            <span class="cs-logo-text">Websthetic</span>
+        </a>
+    </div>
+</header>
+
+<script>// Nav blur on scroll
+const nav = document.getElementById('cs-navigation');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.classList.add('cs-scrolled');
+    } else {
+        nav.classList.remove('cs-scrolled');
+    }
+});</script>
