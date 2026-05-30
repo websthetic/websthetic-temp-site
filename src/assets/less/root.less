@@ -14,11 +14,6 @@
 		--bodyTextColor: #4e4b66;
 		--bodyTextColorWhite: #fafbfc;
 
-		/* Dark Mode Styles */
-		--dark: #082032;
-		--medium: #2c394b;
-		--accent: #334756;
-
 		/* 13px - 16px */
 		--topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
 		/* 31px - 49px */
@@ -200,27 +195,6 @@
 		display: none !important;
 	}
 
-	.cs-dark,
-	.dark {
-		display: none !important;
-	}
-
-	body.dark-mode {
-		.cs-light,
-		.light {
-			display: none !important;
-		}
-
-		.cs-dark,
-		.dark {
-			display: block !important;
-		}
-
-		.cs-button-outline {
-			border-color: #fff;
-			color: #fff;
-		}
-	}
 }
 
 /* Desktop Utilities */
@@ -267,21 +241,6 @@
 	button {
 		&:hover {
 			cursor: pointer;
-		}
-	}
-
-	body.dark-mode {
-		background-color: var(--dark);
-
-		p,
-		li,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: #fff;
 		}
 	}
 }
