@@ -1,48 +1,29 @@
 ---
-title: "Thanks | Websthetic"
-description: "Thank you for reaching out — we'll be in touch soon."
-permalink: "/thanks/"
+title: "Thank You | Websthetic"
+description: "We've received your message and will be in touch shortly."
+permalink: "/thank-you/"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/critical.css"/>
-    {% if client.isProduction %}
-        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/assets/css/local.css"></noscript>
-    {% else %}
-        <link rel="stylesheet" href="/assets/css/local.css"/>
-    {% endif %}
-    <link rel="stylesheet" href="/assets/css/thanks.css"/>
+    <link rel="stylesheet" href="/assets/css/thanks.css">
 {% endblock %}
 
 {% block body %}
 
 <!-- ============================================ -->
-<!--               Thanks Section                 -->
+<!--                  Thank You                   -->
 <!-- ============================================ -->
 
-<section id="thanks-websthetic">
+<section id="cs-thankyou">
     <div class="cs-container">
-
-        <svg class="cs-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="cs-check-circle" cx="28" cy="28" r="19" stroke="#0f1923" stroke-width="1.5" fill="none"/>
-            <polyline class="cs-check-mark" points="19,28 25,34 37,22" stroke="#0f1923" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-
-        <h1 class="cs-title">Thank you for<br>reaching out.</h1>
-
-        <p class="cs-subtitle">We'll be in touch soon.</p>
-
-        <div class="cs-divider"></div>
-
-        <p class="cs-body">
-            Your message has landed safely in our inbox. We typically respond within 1–2 business days — we look forward to learning more about your project.
-        </p>
-
-        <a class="cs-back" href="/">← Back to home</a>
-
+        <div class="cs-content">
+            <h1 class="cs-title">Message received.</h1>
+            <p class="cs-text">Thanks for reaching out. We'll review your note and get back to you within one to two business days.</p>
+            <p class="cs-fine">Talk soon.</p>
+        </div>
+        <a href="/" class="cs-back">← back to home</a>
     </div>
 </section>
 

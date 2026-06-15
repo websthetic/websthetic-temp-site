@@ -1,0 +1,39 @@
+<!-- About Takeover -->
+<div class="cs-about-takeover" id="cs-about-takeover" role="dialog" aria-modal="true" aria-labelledby="cs-about-title">
+    <button class="cs-about-close" id="cs-about-close" aria-label="close">✕</button>
+    <div class="cs-about-inner">
+        <p class="cs-about-title" id="cs-about-title">We build websites with intention.</p>
+        <p class="cs-about-text">Websthetic is a Toronto-based web design and development studio creating refined, high-performing websites for modern businesses.</p>
+        <p class="cs-about-text">Our work blends clean design, thoughtful strategy, and custom development to help brands show up with more clarity, confidence, and credibility online.</p>
+    </div>
+</div>
+
+<script>
+(() => {
+    const trigger = document.getElementById('cs-about-trigger');
+    const takeover = document.getElementById('cs-about-takeover');
+    const close = document.getElementById('cs-about-close');
+
+    const open = () => {
+        takeover.classList.add('cs-open');
+        document.body.style.overflow = 'hidden';
+        close.focus();
+    };
+
+    const shut = () => {
+        takeover.classList.remove('cs-open');
+        document.body.style.overflow = '';
+        trigger.focus();
+    };
+
+    // expose globally so onclick="openAboutModal()" in the HTML works
+    window.openAboutModal = open;
+
+    trigger.addEventListener('click', open);
+    close.addEventListener('click', shut);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && takeover.classList.contains('cs-open')) shut();
+    });
+})();
+</script>

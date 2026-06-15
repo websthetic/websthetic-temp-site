@@ -4,19 +4,28 @@
 
 <header id="cs-navigation">
     <div class="cs-container">
-        <a href="/" class="cs-logo" aria-label="Websthetic Home">
-            <span class="cs-logo-text">Websthetic</span>
+        <a href="/" class="cs-logo" aria-label="Websthetic home page">
+            <img src="https://websthetic.tor1.cdn.digitaloceanspaces.com/websthetic-website/websthetic%20logo.svg" alt="Websthetic" width="120" height="40" decoding="async">
         </a>
+        <div class="cs-nav-actions">
+            <button class="cs-about-trigger" id="cs-about-trigger" onclick="openAboutModal()" aria-haspopup="dialog">
+                <span class="cs-button-circle" aria-hidden="true"></span>
+                <span class="cs-button-label">About</span>
+            </button>
+            <button class="cs-about-trigger" id="cs-works-trigger" onclick="openWorksModal()" aria-haspopup="dialog">
+                <span class="cs-button-circle" aria-hidden="true"></span>
+                <span class="cs-button-label">Works</span>
+            </button>
+            <a class="cs-instagram" href="https://www.instagram.com/websthetic.co" target="_blank" rel="noopener" aria-label="Visit our Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                </svg>
+            </a>
+        </div>
     </div>
 </header>
 
-<script>// Nav blur on scroll
-const nav = document.getElementById('cs-navigation');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        nav.classList.add('cs-scrolled');
-    } else {
-        nav.classList.remove('cs-scrolled');
-    }
-});</script>
+{% include 'components/about.html' %}
+{% include 'components/recent-works.html' %}

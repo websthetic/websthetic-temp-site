@@ -1,201 +1,267 @@
 /*-- -------------------------- -->
-<---          Contact           -->
+<---          Portfolio         -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #contact-websthetic {
-        background-color: #E4E3DB;
-        padding: clamp(5rem, 10vw, 8rem) (16/16rem);
-        box-sizing: border-box;
+@media only screen and (min-width: 0px) {
+    #cs-portfolio {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
 
         .cs-container {
             width: 100%;
-            max-width: (1280/16rem);
+            max-width: (1440/16rem);
             margin: auto;
+        }
+
+        /* ---- Section Header ---- */
+        .cs-header {
             display: flex;
             flex-direction: column;
-            gap: clamp(3rem, 6vw, 5rem);
+            gap: (20/16rem);
+            margin-bottom: clamp(2.5rem, 5vw, 4rem);
         }
 
-        .cs-left {
-            display: flex;
-            flex-direction: column;
-            gap: (8/16rem);
-            order: 2;
-        }
-
-        .cs-say-hi {
-            font-family: 'Canela Medium', serif;
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            color: #0f1923;
-            margin: 0 0 (16/16rem);
-        }
-
-        .cs-enquiry-label {
-            font-size: (14/16rem);
-            color: #0f1923;
-            opacity: 0.6;
-            margin: 0;
-        }
-
-        .cs-email {
-            font-size: (14/16rem);
-            color: #0f1923;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .cs-right {
-            display: flex;
-            flex-direction: column;
-            order: 1;
+        .cs-topper {
+            display: inline-block;
+            margin-bottom: (12/16rem);
+            font-family: var(--bodyFont);
+            font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+            font-weight: bold;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, 0.5);
         }
 
         .cs-title {
-            font-family: 'Canela Medium', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 900;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            color: #0f1923;
-            margin: 0 0 clamp(2rem, 4vw, 3rem);
+            margin: 0;
+            font-family: var(--headerFont);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: -0.01em;
+            color: var(--secondaryLight);
         }
 
-        .cs-form {
+        .cs-text {
+            max-width: (480/16rem);
+            margin: 0;
+            font-family: var(--bodyFont);
+            font-size: clamp(1rem, 1.8vw, 1.125rem);
+            line-height: 1.6;
+            color: rgba(245, 240, 232, 0.6);
+        }
+
+        /* ---- Carousel ---- */
+        .cs-carousel {
+            width: 100%;
+        }
+
+        .cs-track {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: (16/16rem);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .cs-project {
+            list-style: none;
+            position: relative;
+            flex: 0 0 88%;
+            min-height: (480/16rem);
+            scroll-snap-align: start;
+            border-radius: (12/16rem);
+            overflow: hidden;
+            display: flex;
+            background-color: #1a0a0a;
+        }
+
+        .cs-project-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .cs-project:hover .cs-project-bg {
+            transform: scale(1.03);
+        }
+
+        .cs-project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.85) 0%,
+                rgba(0, 0, 0, 0.4) 50%,
+                rgba(0, 0, 0, 0.1) 100%
+            );
+        }
+
+        .cs-project-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            box-sizing: border-box;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
             display: flex;
             flex-direction: column;
-            width: 100%;
+            justify-content: flex-end;
         }
 
-        .cs-field {
-            width: 100%;
-            border-bottom: 1px solid rgba(15, 25, 35, 0.2);
-            margin-bottom: (32/16rem);
-        }
-
-        .cs-field-textarea {
-            border-bottom: none;
-        }
-
-        .cs-input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
+        .cs-project-tag {
+            display: inline-block;
+            margin-bottom: (12/16rem);
             font-family: var(--bodyFont);
-            font-size: (18/16rem);
-            color: #0f1923;
-            padding: (8/16rem) 0 (12/16rem);
-
-            &::placeholder {
-                color: #0f1923;
-                opacity: 0.35;
-            }
+            font-size: (11/16rem);
+            font-weight: bold;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, 0.5);
         }
 
-        .cs-textarea {
-            resize: none;
-            height: (160/16rem);
+        .cs-project-name {
+            margin: 0 0 (12/16rem);
+            font-family: var(--headerFont);
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.1;
+            color: var(--secondaryLight);
         }
 
-        .cs-field-button {
-            border-top: 1px solid rgba(15, 25, 35, 0.2);
-            padding-top: (32/16rem);
+        .cs-project-text {
+            max-width: (480/16rem);
+            margin: 0;
+            font-family: var(--bodyFont);
+            font-size: clamp(0.875rem, 1.4vw, 1rem);
+            line-height: 1.65;
+            color: rgba(245, 240, 232, 0.7);
         }
 
-        .cs-button {
+        .cs-project-footer {
+            margin-top: (28/16rem);
+        }
+
+        .cs-project-btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            background-color: #0f1923;
-            color: #E4E3DB;
+            gap: (8/16rem);
+            padding: (12/16rem) (24/16rem);
+            text-decoration: none;
             font-family: var(--bodyFont);
-            font-size: (14/16rem);
-            font-weight: 500;
-            border: none;
-            border-radius: (50/16rem);
-            padding: (16/16rem) (48/16rem);
-            cursor: pointer;
-            transition: opacity 0.3s;
+            font-size: (12/16rem);
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary);
+            background-color: var(--secondaryLight);
+            border-radius: (100/16rem);
+            transition: background-color 0.3s, color 0.3s;
 
             &:hover {
-                opacity: 0.8;
+                background-color: rgba(245, 240, 232, 0.85);
             }
+        }
+
+        /* ---- Controls ---- */
+        .cs-carousel-controls {
+            margin-top: (28/16rem);
+            display: flex;
+            align-items: center;
+            gap: (24/16rem);
+        }
+
+        .cs-progress {
+            flex: 1 1 auto;
+            height: (3/16rem);
+            background-color: rgba(245, 240, 232, 0.15);
+            border-radius: (100/16rem);
+            overflow: hidden;
+        }
+
+        .cs-progress-fill {
+            width: 0%;
+            height: 100%;
+            background-color: var(--secondaryLight);
+            border-radius: (100/16rem);
+            transition: width 0.15s linear;
+        }
+
+        .cs-arrows {
+            display: flex;
+            gap: (8/16rem);
+            flex: none;
+        }
+
+        .cs-arrow {
+            width: (48/16rem);
+            height: (48/16rem);
+            background-color: transparent;
+            border: 1px solid rgba(245, 240, 232, 0.25);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondaryLight);
+            cursor: pointer;
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s, opacity 0.3s;
+
+            svg {
+                width: (20/16rem);
+                height: (20/16rem);
+            }
+
+            &:hover {
+                background-color: var(--secondaryLight);
+                border-color: var(--secondaryLight);
+                color: var(--primary);
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #cs-portfolio {
+        .cs-header {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: (48/16rem);
+        }
+
+        .cs-track {
+            gap: (20/16rem);
+        }
+
+        .cs-project {
+            flex: 0 0 70%;
+            min-height: (520/16rem);
         }
     }
 }
 
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #contact-websthetic {
-        .cs-container {
-            flex-direction: row;
-            align-items: flex-end;
-            gap: (80/16rem);
+    #cs-portfolio {
+        .cs-project {
+            flex: 0 0 58%;
+            min-height: (560/16rem);
         }
-
-        .cs-left {
-            width: 40%;
-            flex-shrink: 0;
-            order: 1;
-        }
-
-        .cs-right {
-            width: 60%;
-            order: 2;
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #contact-websthetic {
-            background-color: var(--dark);
-
-            .cs-say-hi,
-            .cs-title,
-            .cs-enquiry-label,
-            .cs-email,
-            .cs-input {
-                color: #fff;
-            }
-
-            .cs-field {
-                border-bottom-color: rgba(255, 255, 255, 0.2);
-            }
-
-            .cs-field-button {
-                border-top-color: rgba(255, 255, 255, 0.2);
-            }
-
-            .cs-button {
-                background-color: #fff;
-                color: var(--dark);
-            }
-        }
-    }
-}
-
-.cs-animate {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-
-    &.cs-animate-delay {
-        transition-delay: 0.2s;
-    }
-
-    &.cs-in-view {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

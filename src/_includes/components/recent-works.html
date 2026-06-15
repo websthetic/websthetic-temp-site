@@ -1,0 +1,64 @@
+<!-- Recent Works Takeover -->
+<div class="cs-works-takeover" id="cs-works-takeover" role="dialog" aria-modal="true" aria-labelledby="cs-works-title">
+    <button class="cs-works-close" id="cs-works-close" aria-label="close">✕</button>
+
+    <div class="cs-works-inner">
+        <div class="cs-works-header">
+            <h2 class="cs-works-title" id="cs-works-title">Recent work</h2>
+            <p class="cs-works-text">A few things we've built recently. Each one started with a conversation and ended with something we're proud of.</p>
+        </div>
+
+        <ul class="cs-works-grid">
+            <li class="cs-project">
+                <div class="cs-project-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/websthetic-website/landing-page/recess-athletics-club.webp');" aria-hidden="true"></div>
+                <div class="cs-project-overlay" aria-hidden="true"></div>
+                <div class="cs-project-content">
+                    <h3 class="cs-project-name">Recess Athletics</h3>
+                    <p class="cs-project-text">Gym Facillity</p>
+                    <div class="cs-project-footer">
+                        <a href="https://therecess.club/" class="cs-project-btn" target="_blank" rel="noopener noreferrer">View Website</a>
+                    </div>
+                </div>
+            </li>
+            <li class="cs-project">
+                <div class="cs-project-bg" style="background-image: url('https://websthetic.tor1.cdn.digitaloceanspaces.com/websthetic-website/landing-page/revibe-portfolio.webp');" aria-hidden="true"></div>
+                <div class="cs-project-overlay" aria-hidden="true"></div>
+                <div class="cs-project-content">
+                    <h3 class="cs-project-name">Revibe</h3>
+                    <p class="cs-project-text">Social Wellness Club</p>
+                    <div class="cs-project-footer">
+                        <a href="https://revibeto.com/" class="cs-project-btn" target="_blank" rel="noopener noreferrer">View Website</a>
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<script>
+(() => {
+    const trigger = document.getElementById('cs-works-trigger');
+    const takeover = document.getElementById('cs-works-takeover');
+    const close = document.getElementById('cs-works-close');
+
+    const open = () => {
+        takeover.classList.add('cs-open');
+        document.body.style.overflow = 'hidden';
+        close.focus();
+    };
+
+    const shut = () => {
+        takeover.classList.remove('cs-open');
+        document.body.style.overflow = '';
+        trigger.focus();
+    };
+
+    window.openWorksModal = open;
+    trigger.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && takeover.classList.contains('cs-open')) shut();
+    });
+})();
+</script>
